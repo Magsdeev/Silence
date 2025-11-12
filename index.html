@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Silence</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Fundo com blur e imagem -->
+  <div class="background"></div>
+
+  <div class="painel">
+
+    <!-- Logo -->
+    <div class="logo">
+      <img src="public/img/silence.jpeg" alt="Logo" />
+    </div>
+
+    <!-- Botão modo claro/escuro -->
+    <button id="modo-btn" title="Alternar modo">🌙</button>
+
+    <h2>CALCULADORA</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Quantidade</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody id="lista-produtos">
+        <!-- Produtos gerados pelo JS -->
+      </tbody>
+    </table>
+
+    <div class="parceria">
+      <h3>Opções de Parceria</h3>
+      <label><input type="radio" name="parceria" value="com" /> Com Parceria</label>
+      <label><input type="radio" name="parceria" value="sem" checked /> Sem Parceria</label>
+    </div>
+
+    <div class="total">
+      Total: <span id="total">R$ 0</span>
+    </div>
+
+    <div class="reset-container">
+      <button id="resetar-btn">Resetar</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!--BY: DAMON MAGS-->

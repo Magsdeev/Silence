@@ -1,0 +1,243 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-weight: bold; 
+  color: white;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.background {
+  background-image: url('public/img/nao\ grita.jpeg'); 
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+}
+
+.painel {
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 16px;
+  width: 95%;
+  max-width: 520px;
+  padding: 25px 30px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 1;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.logo img {
+  width: 70px;
+  height: auto;
+}
+
+#modo-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#modo-btn:hover {
+  transform: scale(1.2);
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 1.2em;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  table-layout: fixed;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+th {
+  border-bottom: 1px solid #555;
+}
+
+.input-qtd {
+  width: 80px;
+  padding: 8px;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  background: #111;
+  color: white;
+  font-size: 1em;
+  outline: none;
+  transition: background 0.3s, color 0.3s;
+  font-weight: bold;
+}
+
+.input-qtd::-webkit-inner-spin-button {
+  opacity: 1;
+  height: 20px;
+}
+
+.total {
+  margin-top: 20px;
+  background: #111;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+  min-width: 220px;
+  display: inline-block;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+#total {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* ==== TOTAL NORMAL (modo escuro) ==== */
+#total.verde {
+  color: #00ffb3;
+  text-shadow: 0 0 12px rgba(0,255,200,0.7);
+}
+
+/* ==== EFEITO PISCAR ==== */
+#total.piscar {
+  animation: brilhoTotal 0.4s ease;
+}
+
+@keyframes brilhoTotal {
+  0% { color: #fff; text-shadow: 0 0 5px rgba(255,255,255,0.3); }
+  50% { color: #00ffb3; text-shadow: 0 0 12px rgba(0,255,200,0.7); }
+  100% { color: #00ffb3; text-shadow: 0 0 10px rgba(0,255,200,0.5); }
+}
+
+.parceria {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.parceria label {
+  display: block;
+  margin: 5px 0;
+}
+
+.reset-container {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+#resetar-btn {
+  background-color: #222;
+  color: white;
+  border: none;
+  padding: 10px 40px;
+  border-radius: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+  font-weight: bold;
+}
+
+#resetar-btn:hover {
+  background-color: #444;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
+
+#resetar-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 0 5px rgba(255,255,255,0.2);
+}
+
+/* ===== MODO CLARO ===== */
+body.claro {
+  color: #111;
+}
+
+body.claro .painel {
+  background: rgba(255, 255, 255, 0.85);
+  color: #111;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+body.claro .background {
+  filter: blur(8px) brightness(1.2);
+}
+
+body.claro .input-qtd {
+  background: #e0e0e0;
+  color: #111;
+}
+
+body.claro .total {
+  background: #e0e0e0;
+}
+
+/* ==== TOTAL VERDE ESCURO (modo claro) ==== */
+body.claro #total.verde {
+  color: #007a33;
+  text-shadow: 0 0 4px rgba(0, 80, 30, 0.6);
+}
+
+/* ==== EFEITO PISCAR NO MODO CLARO ==== */
+body.claro #total.piscar {
+  animation: brilhoTotalClaro 0.4s ease;
+}
+
+@keyframes brilhoTotalClaro {
+  0% { color: #111; text-shadow: 0 0 3px rgba(0,0,0,0.2); }
+  50% { color: #007a33; text-shadow: 0 0 6px rgba(0,100,40,0.7); }
+  100% { color: #007a33; text-shadow: 0 0 4px rgba(0,100,40,0.5); }
+}
+
+body.claro #resetar-btn {
+  background-color: #ddd;
+  color: #111;
+}
+
+body.claro #resetar-btn:hover {
+  background-color: #bbb;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 500px) {
+  .painel {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .logo img {
+    width: 50px;
+  }
+
+  .input-qtd {
+    width: 70px;
+  }
+}
